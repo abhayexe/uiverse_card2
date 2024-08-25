@@ -1,0 +1,226 @@
+*{
+    cursor: pointer;
+}
+::selection {
+    color: red;
+    background: rgba(52, 48, 135, 0);
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg,  rgb(63, 64, 88) 9%, rgb(17, 18, 21)  50%);
+
+}
+.supercard{
+    width: 440px;
+    height: 320px;
+    border-radius: 50px;
+    background-color: #272b38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.supercard::after, .supercard::before{
+    content: '';
+    position: absolute;
+    width: 440px;
+    height: 320px;
+    z-index: -1;
+    border-radius: 50px;
+    background-image: conic-gradient(from var(--angle), #272b38, #272b38, red, black, black, #272b38, rgb(107, 60, 60), rgb(255, 123, 0), black, #121419,#272b38,#272b38);
+    box-shadow: inset -4px 22px 6px -22px rgb(251, 251, 251), 0px 60px 41px 10px rgba(8, 8, 9, 0.539);
+    transition: 1s;
+}
+.supercard:hover::after,
+.supercard:hover::before {
+    animation: 3s spin linear infinite;
+}
+.supercard::before{
+    filter: blur(30px);
+    opacity: 0.4;
+}
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+.card {
+    background-color: rgb(29, 29, 37);
+    border-radius: 50px;
+    padding: 40px 40px 40px 40px ;
+    width: 350px;
+    height: 230px;
+    border-left: 1px solid rgb(35, 18, 18);
+    border-bottom: 1px solid rgb(255, 136, 0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset -6px -57px 47px -47px rgba(113, 109, 117, 0.578), inset -4px -59px 2px -57px rgb(95, 88, 92),  inset 60px -14px 4px -60px rgb(9, 9, 10), inset -57px -16px 4px -55px rgb(23, 22, 30),  inset 10px 34px 6px -36px rgb(230, 232, 244), inset -20px 25px 1px -30px rgba(250, 120, 65, 0.605), -48px -1px 8px -45px rgb(6, 11, 27), 0px 0px 2px 4px #1c1f28,0px -26px 18px -13px rgba(172, 173, 222, 0.144);
+    position: relative;
+    overflow: hidden;
+    background: rgb(45,42,62);
+    background: linear-gradient(148deg, rgb(32, 32, 43) 17%, rgb(40, 37, 47) 46%, rgb(34, 33, 41) 75%, rgb(25, 55, 128) 200%);}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: -10px;
+
+}
+
+.title-box{
+    filter: drop-shadow(130px 230px 20px #021030);
+}
+.title {
+    color: #cdc9d1d8;
+    font-size: 17px;
+    margin: 0;
+    transition: 0.5s;
+}
+.title:hover{
+    font-size: 19px;
+    filter: drop-shadow(0px 0px 14px #d1b9ee);
+    color: #f7f3fcfe;
+}
+.views {
+    color: #efe7f9c5;
+    font-size: 29px;
+    font-weight: 600;
+    margin: 0;
+    filter: drop-shadow(0px 0px 14px #5e5e61);
+    transition: 0.5s;
+}
+.views:hover{
+    font-size: 31px;
+    filter: drop-shadow(0px 0px 14px #ff0066);
+    color: #ff1c86;
+}
+
+.heart-button{
+    margin-right: -20px;
+    margin-top: -20px;
+    width: 63px;
+    height: 63px;
+    background-color: #3f1111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px -3px 4px 0px rgba(180, 151, 151, 0.75), 14px -24px 77px 0px rgb(255, 64, 0),  50px -45px 111px 10px rgba(255,0,0,1);
+    transition: 1s;
+}
+.heart-button:hover{
+    box-shadow: inset 0px 3px 4px 0px rgba(184, 173, 211, 0.916), 14px -24px 77px 0px rgb(204, 0, 255),  -50px 45px 111px 0px rgb(255, 0, 242);
+
+}
+.heart-icon:active, .heart-button:active{
+    background-color: #3d0f74;
+    box-shadow: inset 0px -3px 4px 0px rgba(0, 119, 255, 0.75), 14px -24px 77px 0px rgb(204, 0, 255),  -100px 45px 111px 0px rgb(255, 0, 242);
+}
+.heart-icon:active{
+    border: 2.5px solid #ff56b3;
+}
+.heart-icon {
+    background-color: #6a2323;
+    border-top: 2.5px solid #f99e69;
+    border-left: 2.5px solid #fd9051;
+    border-right: 2.5px solid #f9792e;
+    border-bottom: 2.5px solid #f68c4e;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.heart-icon svg{
+    transform: scale(0.55);
+    margin-top: 5px;
+    filter: drop-shadow(-2px 3px 5px #000002);
+    transition: 1s;
+}
+
+.card:hover .heart-icon svg {
+    animation: scaleUpDown 1s infinite alternate;
+}
+
+@keyframes scaleUpDown {
+    0% {
+        transform: scale(0.55);
+    }
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+.graph-container {
+    position: relative;
+    height: 150px;
+}
+.graph-lines {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.graph-line {
+    height: 1px;
+    background-color: rgba(116, 114, 114, 0.989);
+    box-shadow: -1px -3px 3px 0px rgba(0, 0, 0, 0.578);
+}
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    color: #ded9d9;
+    font-size: 12px;
+    font-weight: 600;
+}
+.time-labels span{
+    transition: 0.5s;
+}
+.time-labels span:hover{
+    font-size: 14px;
+}
+
+.graph-container svg {
+    position: absolute;
+    top: -30px;
+    left: -25px;
+    width: 120%;
+    height: 120%;
+    transform: scale(0.9, 1.2);
+    filter: drop-shadow(30px 10px 54px #ad86c746);
+    transition: 0.7s;
+}
+
+.graph-container svg:hover{
+    filter: drop-shadow(30px 10px 54px #0a1936);
+    transform: scale(0.95, 1.25);
+}
+.graph-container svg:active{
+    transform: scale(0.9, 1.2);
+
+}
